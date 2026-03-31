@@ -1,0 +1,6 @@
+python requirements:
+streamlit
+pandas
+scikit-learn
+joblib
+numpy
