@@ -5,7 +5,8 @@ A end-to-end data analytics project analyzing 250,000 job postings to identify s
 ---
 
 ## Live App
-[Job Salary Predictor](https://job-salary-data-analysis.streamlit.app)
+[Job Salary Predictor](job-salary-data-analysis-sgh3guxrlgvch7gp6azncf
+.streamlit.app)
 ---
 ![predictor preview](images/predictor.png)
 
@@ -106,7 +107,7 @@ model.fit(X, y)
 importances = pd.Series(model.feature_importances_, index=X.columns)
 importances.sort_values(ascending=False)
 ```
-![features](images/features)
+![features](images/features.png)
 Key findings from feature importance analysis:
 - **Job title** and **location** were the strongest salary drivers
 - **Experience years** showed a consistent positive correlation with salary
@@ -183,8 +184,6 @@ Best params: {
 | MAE | $5,171 |
 | R² (Test) | 0.9692 |
 | R² (Train) | 0.9946 |
-
-The small gap between train and test R² confirms the model is not overfitting.
 
 ---
 
