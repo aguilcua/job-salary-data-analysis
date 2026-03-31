@@ -4,35 +4,29 @@ import joblib
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# ── Page config ──────────────────────────────────────────────
 st.set_page_config(
     page_title="Salary Predictor",
     page_icon="💼",
     layout="centered"
 )
 
-# ── Load model and encoders ───────────────────────────────────
 @st.cache_resource
 def load_model():
-    model = joblib.load('salary_model.pkl')
-    encoders = joblib.load('encoders.pkl')
+    model = joblib.load(os.path.join(BASE_DIR, 'salary_model.pkl'))
+    encoders = joblib.load(os.path.join(BASE_DIR, 'encoders.pkl'))
     return model, encoders
 
-model, encoders = load_model()
-# ── Load unique values for dropdowns from CSV ─────────────────
 @st.cache_data
 def load_options():
-    df = pd.read_csv('cleaned_jobs_salary.csv')
+    df = pd.read_csv(os.path.join(BASE_DIR, 'cleaned_jobs_salary.csv'))
     return df
 
 df = load_options()
 
-# ── App header ────────────────────────────────────────────────
 st.title("Tech Job Salary Predictor")
 st.markdown("Fill in the job details below to get a predicted salary.")
 st.divider()
 
-# ── Input form ────────────────────────────────────────────────
 col1, col2 = st.columns(2)
 
 with col1:
@@ -84,7 +78,6 @@ certifications = st.slider(
 
 st.divider()
 
-# ── Prediction ────────────────────────────────────────────────
 if st.button("Predict Salary", type="primary", use_container_width=True):
 
     cat_cols = ['job_title', 'education_level', 'industry',
@@ -102,7 +95,6 @@ if st.button("Predict Salary", type="primary", use_container_width=True):
         'certifications': certifications
     }])
 
-    # Reorder columns to exactly match training order
     input_data = input_data[['job_title', 'experience_years', 'education_level',
                               'skills_count', 'industry', 'company_size',
                               'location', 'remote_work', 'certifications']]
