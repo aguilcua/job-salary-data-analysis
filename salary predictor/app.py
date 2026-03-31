@@ -3,6 +3,7 @@ import pandas as pd
 import joblib
 import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # ── Page config ──────────────────────────────────────────────
 st.set_page_config(
     page_title="Salary Predictor",
@@ -17,7 +18,6 @@ def load_model():
     encoders = joblib.load('encoders.pkl')
     return model, encoders
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model, encoders = load_model()
 # ── Load unique values for dropdowns from CSV ─────────────────
 @st.cache_data
