@@ -107,6 +107,7 @@ importances = pd.Series(model.feature_importances_, index=X.columns)
 importances.sort_values(ascending=False)
 ```
 ![features](images/features.png)
+
 Key findings from feature importance analysis:
 - **Job title** and **location** were the strongest salary drivers
 - **Experience years** showed a consistent positive correlation with salary
@@ -184,6 +185,7 @@ Best params: {
 | R² (Test) | 0.9692 |
 | R² (Train) | 0.9946 |
 
+adjustments were made to reduce model size < 100 MB per github requirements
 ---
 
 ## Streamlit Web App
