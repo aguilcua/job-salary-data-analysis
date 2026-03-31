@@ -10,18 +10,10 @@ st.set_page_config(
     layout="centered"
 )
 
-@st.cache_resource
-def load_model():
-    model = joblib.load(os.path.join(BASE_DIR, 'salary_model.pkl'))
-    encoders = joblib.load(os.path.join(BASE_DIR, 'encoders.pkl'))
-    return model, encoders
 
-@st.cache_data
-def load_options():
-    df = pd.read_csv(os.path.join(BASE_DIR, 'cleaned_jobs_salary.csv'))
-    return df
-
-df = load_options()
+model = joblib.load(os.path.join(BASE_DIR, 'salary_model.pkl'))
+encoders = joblib.load(os.path.join(BASE_DIR, 'encoders.pkl'))
+df = pd.read_csv(os.path.join(BASE_DIR, 'cleaned_jobs_salary.csv'))
 
 st.title("Tech Job Salary Predictor")
 st.markdown("Fill in the job details below to get a predicted salary.")
