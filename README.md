@@ -5,8 +5,7 @@ A end-to-end data analytics project analyzing 250,000 job postings to identify s
 ---
 
 ## Live App
-[Job Salary Predictor](job-salary-data-analysis-sgh3guxrlgvch7gp6azncf
-.streamlit.app)
+[Job Salary Predictor](job-salary-data-analysis-sgh3guxrlgvch7gp6azncf.streamlit.app)
 ---
 ![predictor preview](images/predictor.png)
 
