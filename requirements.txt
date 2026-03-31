@@ -1,4 +1,3 @@
-python requirements:
 streamlit
 pandas
 scikit-learn
