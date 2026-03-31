@@ -55,7 +55,7 @@ job-salary-data-analysis/
 ---
 
 ## Dataset
-
+Dataset found on kaggle: [link](https://www.kaggle.com/datasets/nalisha/job-salary-prediction-dataset)
 The dataset contains 250,000 job postings with the following features:
 
 | Column | Description |
